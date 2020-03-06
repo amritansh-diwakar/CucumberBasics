@@ -7,3 +7,11 @@ Feature: Learning Cucumber with Selenium
       | admin    | adminpassword |
     And Click Submit
     Then Login is successful
+
+  Scenario: Login to fail
+    Given I navigate to login page
+    When I enter username and password
+      | username | password      |
+      | admin    | adminpassword |
+    And Click Submit
+    Then Login is unsuccessful

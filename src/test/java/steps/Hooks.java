@@ -16,7 +16,7 @@ public class Hooks extends BaseUtil {
 
     @Before
     public void initialize(Scenario scenario) {
-        System.out.println("Open Browser");
+        System.out.println("Opening Browser");
 //        System.setProperty("webdriver.chrome.driver","C:\\Drivers\\Webdrivers\\chromedriver.exe");
 //        base.driver =  new ChromeDriver();
         System.setProperty("webdriver.gecko.driver", "C:\\Drivers\\Webdrivers\\geckodriver.exe");
@@ -30,6 +30,7 @@ public class Hooks extends BaseUtil {
 
     @After
     public void teardown() {
-        System.out.println("Close Browser");
+        base.driver.quit();
+        System.out.println("Closing Browser");
     }
 }

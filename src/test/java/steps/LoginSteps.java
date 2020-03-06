@@ -5,7 +5,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.junit.Assert;
+import org.testng.Assert;
 import org.openqa.selenium.By;
 import pages.LoginPage;
 
@@ -45,6 +45,11 @@ public class LoginSteps extends BaseUtil {
     @Then("^Login is successful$")
     public void loginIsSuccessful() {
         Assert.assertEquals(base.driver.findElement(By.id("Initial")).isDisplayed(),true);
+    }
+
+    @Then("^Login is unsuccessful$")
+    public void loginIsUnsuccessful() {
+        Assert.assertEquals(base.driver.findElement(By.id("Initia")).isDisplayed(),true);
     }
 
     public class User{
